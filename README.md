@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/pqrs-org/cpp-hash.svg?branch=master)](https://travis-ci.org/pqrs-org/cpp-hash)
+[![Build Status](https://travis-ci.com/pqrs-org/cpp-hash.svg?branch=master)](https://travis-ci.com/pqrs-org/cpp-hash)
 [![License](https://img.shields.io/badge/license-Boost%20Software%20License-blue.svg)](https://github.com/pqrs-org/cpp-hash/blob/master/LICENSE.md)
 
 # cpp-hash
