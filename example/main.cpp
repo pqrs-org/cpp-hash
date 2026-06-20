@@ -1,7 +1,7 @@
 #include <iostream>
 #include <pqrs/hash.hpp>
 
-int main(void) {
+int main() {
   std::size_t h = 0;
 
   int x = 100;

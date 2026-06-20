@@ -1,9 +1,9 @@
 #include <boost/ut.hpp>
-#include <iostream>
+#include <cstddef>
 #include <pqrs/hash.hpp>
 #include <string>
 
-int main(void) {
+int main() {
   using namespace boost::ut;
   using namespace boost::ut::literals;
 
@@ -31,6 +31,37 @@ int main(void) {
       pqrs::hash::combine(h, s);
 
       expect(h != 0);
+    }
+    {
+      std::size_t h1 = 0;
+      pqrs::hash::combine(h1, 100);
+      pqrs::hash::combine(h1, 200);
+
+      std::size_t h2 = 0;
+      pqrs::hash::combine(h2, 100);
+      pqrs::hash::combine(h2, 200);
+
+      expect(h1 == h2);
+    }
+    {
+      std::size_t h1 = 0;
+      pqrs::hash::combine(h1, 100);
+      pqrs::hash::combine(h1, 200);
+
+      std::size_t h2 = 0;
+      pqrs::hash::combine(h2, 200);
+      pqrs::hash::combine(h2, 100);
+
+      expect(h1 != h2);
+    }
+    {
+      std::size_t h1 = 0;
+      pqrs::hash::combine(h1, 100);
+
+      std::size_t h2 = 42;
+      pqrs::hash::combine(h2, 100);
+
+      expect(h1 != h2);
     }
   };
 
